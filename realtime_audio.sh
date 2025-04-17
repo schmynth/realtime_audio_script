@@ -1,18 +1,10 @@
 #!/bin/bash
 
-scrDir="$(dirname "$(realpath "$0")")"
-# shellcheck disable=SC1091
-if ! source "${scrDir}/global_fn.sh"; then
-    echo "Error: unable to source global_fn.sh..."
-    exit 1
-fi
-
 if ! source "${scrDir}/pretty_print.sh"; then
 	printf "\e[0;30;41m ERROR \e[0m :: \e[1;31m pretty_print.sh (needed for logging) not found!\e[0m"
 	exit 1
 fi
-# find full path of script:
-SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 tabs 40
 
 
